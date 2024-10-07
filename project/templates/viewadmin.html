@@ -1,0 +1,21 @@
+{% extends "common.html" %}
+{% block title %}view_admin{% endblock title %}
+{% block content %}
+{% load static %}
+<div style="padding-left: 6em; padding-top: 2em;">
+    <h6>Admin Details</h6>
+    <p>Full Name :{{admins.name}}</p>
+    <p>Email: {{admins.email}}</p>
+    <p>Phone Number: {{admins.phone}}</p>
+    <p>Username : {{admins.username}}</p>
+    <p>Password : {{admins.password}} </p>
+    <div style="display: flex;gap: 2em;">
+        <div>    <a href="{% url "delete" admins.id %}"><button  class="btn btn-outline-danger" >delete</button></a>
+        </div>
+        <div>    <a href="{% url "edit" admins.id %}"><button  class="btn btn-outline-danger">edit</button></a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
